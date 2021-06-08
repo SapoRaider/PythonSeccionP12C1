@@ -8,7 +8,27 @@ def validarDatoNumerico(mensaje):
     return datoNumerico
 
 def validarDatoString(mensaje):
-    dato = input(mensaje)
+    while True:        
+        try:
+            dato = input(mensaje)
+            if dato.isdigit():
+                raise Exception
+            else:
+                break
+        except:
+            print("solo se permite texto")
+    return dato
+
+def validarDatoBool(mensaje):
+    while True:        
+        try:
+            dato = str(input(mensaje))
+            if dato.upper() == "S" or dato == "N":
+                break
+            else:
+                raise Exception
+        except:
+            print("solo se permite S/N")
     return dato
 
 def validarRut(Rut):
